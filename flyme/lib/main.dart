@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tickefly/pantallas_inicios/home_screen.dart';
+import 'package:tickefly/pantallas_inicios/counter_screen.dart';
+import 'package:tickefly/pantallas_inicios/counter_screenless.dart';
 
 void main() {
   runApp(const miApp());
@@ -11,6 +12,6 @@ class miApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: HomeScreen());
+        debugShowCheckedModeBanner: false, home: CounterScreenLess());
   }
 }
