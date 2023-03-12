@@ -12,8 +12,8 @@ class _CounterScreenState extends State<CounterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    const fontCounterStyle = TextStyle(
-        fontSize: 25,
+    const fontButtonStyle = TextStyle(
+        fontSize: 30,
         fontFamily: 'Roboto',
         color: Colors.blueAccent,
         fontWeight: FontWeight.w800);
@@ -37,14 +37,9 @@ class _CounterScreenState extends State<CounterScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text("Conteo 🕰️",
-                    style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black87,
-                        fontFamily: 'Raleway')),
+                const Text("Conteo 🕰️", style: fontButtonStyle),
                 Text(
-                  style: fontCounterStyle,
+                  style: fontButtonStyle,
                   '$contador',
                 ),
               ]),
