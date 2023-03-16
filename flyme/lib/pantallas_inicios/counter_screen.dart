@@ -46,16 +46,27 @@ class _CounterScreenState extends State<CounterScreen> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          setState(() {
-            contador++;
-          });
-        },
-        icon: const Icon(Icons.add),
-        label: const Text(
-          "more",
-        ),
+      floatingActionButton: Row(
+        children: <Widget>[
+          FloatingActionButton.extended(
+            onPressed: () {
+              setState(() {});
+              contador++;
+            },
+            icon: const Icon(Icons.add),
+            label: const Text(
+              "more",
+            ),
+          ),
+          FloatingActionButton.extended(
+            onPressed: () {
+              setState(() {});
+              contador--;
+            },
+            icon: const Icon(Icons.exposure_minus_1_rounded),
+            label: const Text("less"),
+          ),
+        ],
       ),
     );
   }
