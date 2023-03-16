@@ -45,9 +45,26 @@ class _CounterScreenState extends State<CounterScreen> {
               ]),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
+          FloatingActionButton.extended(
+            onPressed: () {
+              setState(() {});
+              contador--;
+            },
+            icon: const Icon(Icons.exposure_minus_1_rounded),
+            label: const Text("less"),
+          ),
+          FloatingActionButton.extended(
+            onPressed: () {
+              setState(() {});
+              contador = 0;
+            },
+            icon: const Icon(Icons.add_road_rounded),
+            label: const Text("reset"),
+          ),
           FloatingActionButton.extended(
             onPressed: () {
               setState(() {});
@@ -57,14 +74,6 @@ class _CounterScreenState extends State<CounterScreen> {
             label: const Text(
               "more",
             ),
-          ),
-          FloatingActionButton.extended(
-            onPressed: () {
-              setState(() {});
-              contador--;
-            },
-            icon: const Icon(Icons.exposure_minus_1_rounded),
-            label: const Text("less"),
           ),
         ],
       ),
