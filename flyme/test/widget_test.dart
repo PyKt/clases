@@ -13,7 +13,7 @@ import 'package:tickefly/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const miApp());
+    await tester.pumpWidget(const myapp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

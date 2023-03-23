@@ -8,7 +8,21 @@ class CounterScreen extends StatefulWidget {
 }
 
 class _CounterScreenState extends State<CounterScreen> {
-  int contador = 1;
+  int contador = 0;
+  void increment() {
+    contador++;
+    setState(() {});
+  }
+
+  void descremen() {
+    contador--;
+    setState(() {});
+  }
+
+  void restState() {
+    contador = 0;
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,36 +60,49 @@ class _CounterScreenState extends State<CounterScreen> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          FloatingActionButton.extended(
-            onPressed: () {
-              setState(
-                () => contador--,
-              );
-            },
-            icon: const Icon(Icons.exposure_minus_1_rounded),
-            label: const Text("less"),
-          ),
-          FloatingActionButton.extended(
-            onPressed: () => setState() => contador=0,
-            icon: const Icon(Icons.add_road_rounded),
-            label: const Text("reset"),
-          ),
-          FloatingActionButton.extended(
-            onPressed: () {
-              setState(() {
-                contador++;
-              });
-            },
-            icon: const Icon(Icons.add),
-            label: const Text(
-              "more",
-            ),
-          ),
-        ],
+      floatingActionButton: CustonAccionButtons(
+        incrementalFn: increment,
+        redutionFn: descremen,
+        resetFn: restState,
       ),
+    );
+  }
+}
+
+class CustonAccionButtons extends StatelessWidget {
+  final Function incrementalFn;
+  final Function redutionFn;
+  final Function resetFn;
+  const CustonAccionButtons({
+    required this.incrementalFn,
+    required this.redutionFn,
+    required this.resetFn,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        FloatingActionButton.extended(
+          onPressed: () => redutionFn(),
+          icon: const Icon(Icons.exposure_minus_1_rounded),
+          label: const Text("less"),
+        ),
+        FloatingActionButton.extended(
+          onPressed: () => resetFn(),
+          icon: const Icon(Icons.add_road_rounded),
+          label: const Text("reset"),
+        ),
+        FloatingActionButton.extended(
+          onPressed: () => incrementalFn(),
+          icon: const Icon(Icons.add),
+          label: const Text(
+            "more",
+          ),
+        ),
+      ],
     );
   }
 }
