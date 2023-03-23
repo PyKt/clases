@@ -50,23 +50,25 @@ class _CounterScreenState extends State<CounterScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           FloatingActionButton.extended(
-            onPressed: () => setState(() {
-              contador--;
-            }),
+            onPressed: () {
+              setState(
+                () => contador--,
+              );
+            },
             icon: const Icon(Icons.exposure_minus_1_rounded),
             label: const Text("less"),
           ),
           FloatingActionButton.extended(
-            onPressed: () => setState(() {
-              contador = 0;
-            }),
+            onPressed: () => setState() => contador=0,
             icon: const Icon(Icons.add_road_rounded),
             label: const Text("reset"),
           ),
           FloatingActionButton.extended(
-            onPressed: () => setState(() {
-              contador++;
-            }),
+            onPressed: () {
+              setState(() {
+                contador++;
+              });
+            },
             icon: const Icon(Icons.add),
             label: const Text(
               "more",
