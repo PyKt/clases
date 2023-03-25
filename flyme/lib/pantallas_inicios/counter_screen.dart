@@ -60,22 +60,22 @@ class _CounterScreenState extends State<CounterScreen> {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: CustonAccionButtons(
+      floatingActionButton: CustomAccionButtons(
         incrementalFn: increment,
-        redutionFn: descremen,
+        reductionFn: descremen,
         resetFn: restState,
       ),
     );
   }
 }
 
-class CustonAccionButtons extends StatelessWidget {
+class CustomAccionButtons extends StatelessWidget {
   final Function incrementalFn;
-  final Function redutionFn;
+  final Function reductionFn;
   final Function resetFn;
-  const CustonAccionButtons({
+  const CustomAccionButtons({
     required this.incrementalFn,
-    required this.redutionFn,
+    required this.reductionFn,
     required this.resetFn,
     super.key,
   });
@@ -86,7 +86,7 @@ class CustonAccionButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         FloatingActionButton.extended(
-          onPressed: () => redutionFn(),
+          onPressed: () => reductionFn(),
           icon: const Icon(Icons.exposure_minus_1_rounded),
           label: const Text("less"),
         ),
