@@ -1,23 +1,32 @@
 import "package:flutter/material.dart";
-import "package:tickefly/pantallas_inicios/counter_screen.dart";
+import 'package:tickefly/screens/screens.dart';
 
 void main() {
-  runApp(const myapp());
+  runApp(const MyApp());
 }
 
-class myapp extends StatefulWidget {
-  const myapp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
-  State<myapp> createState() => _myappState();
+  State<MyApp> createState() => _MyAppState();
 }
 
-class _myappState extends State<myapp> {
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CounterScreen(),
+      title: 'Mini Apps',
+      initialRoute: 'CounterScreen',
+      routes: {
+        'AlertScreen': (BuildContext context) => const AlertScreen(),
+        'CardScreen': (BuildContext context) => const CardScreen(),
+        'CounterScreen': (BuildContext context) => const CounterScreen(),
+        'HomeScreen': (BuildContext context) => const HomeScreen(),
+        'CounterLessScreen': (BuildContext context) =>
+            const CounterButtonLess(),
+      },
     );
   }
 }
