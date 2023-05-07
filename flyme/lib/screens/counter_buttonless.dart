@@ -8,7 +8,7 @@ class CounterButtonLess extends StatefulWidget {
 }
 
 class _CounterScreenState extends State<CounterButtonLess> {
-  int restador = 1;
+  int restador = 0;
 
   @override
   Widget build(BuildContext context) {
