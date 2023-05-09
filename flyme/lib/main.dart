@@ -18,12 +18,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Mini Apps',
-      initialRoute: 'CounterScreen',
+      initialRoute: 'HomeScreen',
       routes: {
+        'HomeScreen': (BuildContext context) => const HomeScreen(),
         'AlertScreen': (BuildContext context) => const AlertScreen(),
         'CardScreen': (BuildContext context) => const CardScreen(),
         'CounterScreen': (BuildContext context) => const CounterScreen(),
-        'HomeScreen': (BuildContext context) => const HomeScreen(),
         'CounterLessScreen': (BuildContext context) =>
             const CounterButtonLess(),
       },
